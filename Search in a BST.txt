@@ -1,0 +1,16 @@
+bool findNode(TreeNode <int> * root, int key){
+    // If root is null.
+    if (root == NULL)
+       return false;
+
+    // If key value is found.
+    if(root->data == key)
+        return true;
+
+    // If key is greater than root's key then check in right subtree.
+    if (root->data < key)
+       return findNode(root->right, key);
+
+    // If key is smaller than root's key then check in left subtree.
+    return findNode(root->left, key);
+}
